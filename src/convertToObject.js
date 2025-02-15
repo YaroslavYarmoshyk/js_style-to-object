@@ -14,9 +14,9 @@ function convertToObject(sourceString) {
 }
 
 function getObjectField(property) {
-  return property
-    .split(':')
-    .reduce((prev, next) => ({ [prev.trim()]: next.trim() }));
+  const [key, value] = property.split(':').map((part) => part.trim());
+
+  return { [key]: value };
 }
 
 module.exports = convertToObject;
